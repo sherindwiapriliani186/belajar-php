@@ -35,15 +35,28 @@
 </head>
 <body>
     <h1>Data Mahasiswa</h1>
+    <a href="insert.php">Tambah Data</a>
     <table border="1" style="width: 100%;">
         <tr>
             <th>NIM</th>
             <th>Nama</th>
+            <th>Tempat lahir</th>
+            <th>Tanggal Lahir</th>
+            <th>Alamat</th>
+            <th>Action</th>
         </tr>
         <?php foreach ($mahasiswa as $value): ?>
         <tr>
             <td><?php echo $value["nim"]; ?></td>
             <td><?php echo $value["nama"]; ?></td>
+            <td><?php echo $value["tempat_lahir"]; ?></td>
+            <td><?php echo $value["tanggal_lahir"]; ?></td>
+            <td><?php echo $value["Alamat"]; ?></td>
+            <td>Edit | Delete</td>
+            <td>
+                <a href="update.php?id=<?= $value['id'] ?>" >Edit</a> | 
+                <a href="delete.php?id=<?= $value['id'] ?>" >Delete</a>
+            </td>
         </tr>
         <?php endforeach; ?>
     </table>
